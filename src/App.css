@@ -12,3 +12,8 @@ html {
 body {
   background-color: #faf9f8;
 }
+
+svg {
+  width: 20px;
+  height: 20px;
+}

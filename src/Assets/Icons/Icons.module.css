@@ -1,0 +1,11 @@
+.search {
+  position: absolute;
+  right: 20px;
+  top: 20%;
+}
+
+@media screen and (min-width: 1024px) {
+  .search {
+    right: 40px;
+  }
+}
