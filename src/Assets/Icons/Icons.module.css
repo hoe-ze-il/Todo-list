@@ -1,11 +1,42 @@
+svg {
+  width: 20px;
+  height: 20px;
+}
+
+path {
+  height: 10px;
+  width: 10px;
+}
+
 .search {
   position: absolute;
   right: 20px;
   top: 20%;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 1024px) {
   .search {
     right: 40px;
   }
+}
+
+.close {
+  cursor: pointer;
+  margin-left: 10px;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .close {
+    display: none;
+  }
+}
+
+.add {
+  cursor: pointer;
+}
+
+.menu {
+  cursor: pointer;
 }
