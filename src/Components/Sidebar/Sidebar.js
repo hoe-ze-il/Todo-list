@@ -5,15 +5,18 @@ import IconSun from "../../Assets/Icons/IconSun";
 import IconList from "../../Assets/Icons/IconList";
 import IconEmptyStar from "../../Assets/Icons/IconEmptyStar";
 import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import DataContext from "../../Context/DataContext";
 
-export default function Sidebar({ openSidebar, onCloseSidebar }) {
+export default function Sidebar() {
+  const { isSidebar } = useContext(DataContext);
   return (
     <aside
       className={`${SidebarCSS.sidebar} ${
-        openSidebar ? SidebarCSS["open-sidebar"] : ""
+        isSidebar ? SidebarCSS["open-sidebar"] : ""
       }`}
     >
-      <IconX onCloseSidebar={onCloseSidebar} />
+      <IconX />
       <section className={SidebarCSS.list}>
         <ul className={SidebarCSS.ul}>
           <NavLink to="/" className={SidebarCSS["sidebar-links"]}>

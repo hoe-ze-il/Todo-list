@@ -1,10 +1,13 @@
+import { useContext } from "react";
 import IconsCSS from "./Icons.module.css";
+import DataContext from "../../Context/DataContext";
 
-function IconMenu({ onOpenSidebar }) {
+function IconMenu() {
+  const { handleSidebar } = useContext(DataContext);
   return (
     <svg
       className={IconsCSS.menu}
-      onClick={onOpenSidebar}
+      onClick={handleSidebar}
       fill="#000"
       aria-hidden="true"
       version="1.1"

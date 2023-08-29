@@ -1,9 +1,12 @@
 import IconsCSS from "./Icons.module.css";
-function IconX({ onCloseSidebar }) {
+import { useContext } from "react";
+import DataContext from "../../Context/DataContext";
+function IconX() {
+  const { handleSidebar } = useContext(DataContext);
   return (
     <svg
       className={IconsCSS.close}
-      onClick={onCloseSidebar}
+      onClick={handleSidebar}
       fill="#000"
       aria-hidden="true"
       version="1.1"
