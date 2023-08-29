@@ -1,4 +1,4 @@
-import SidebarCSS from "./Sidebar..module.css";
+import SidebarCSS from "./Sidebar.module.css";
 import IconAddGroup from "../../Assets/Icons/IconAddGroup";
 
 function GroupForm() {

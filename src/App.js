@@ -6,7 +6,6 @@ import Important from "./Pages/Important/Important";
 import Complete from "./Pages/Complete/Complete";
 import { Routes, Route } from "react-router-dom";
 import { DataProvider } from "./Context/DataContext";
-
 export default function App() {
   return (
     <div>
@@ -15,16 +14,7 @@ export default function App() {
         <div className={AppCSS.container}>
           <Sidebar />
           <Routes>
-            <Route
-              path="/"
-              element={
-                <MyTask
-                // onToggleSidebar={handleSidebar}
-                // isSidebar={isSidebar}
-                // isLargeScreen={isLargeScreen}
-                />
-              }
-            />
+            <Route path="/" element={<MyTask />} />
             <Route path="/important" element={<Important />} />
             <Route path="/completed" element={<Complete />} />
           </Routes>

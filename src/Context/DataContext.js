@@ -24,6 +24,7 @@ export function DataProvider({ children }) {
     if (!isSidebar) setIsSidebar(true);
     if (isSidebar) setIsSidebar(false);
   };
+
   return (
     <DataContext.Provider
       value={{

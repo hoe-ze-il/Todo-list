@@ -1,5 +1,5 @@
 import GroupForm from "./GroupForm";
-import SidebarCSS from "./Sidebar..module.css";
+import SidebarCSS from "./Sidebar.module.css";
 import IconX from "../../Assets/Icons/IconX";
 import IconSun from "../../Assets/Icons/IconSun";
 import IconList from "../../Assets/Icons/IconList";
