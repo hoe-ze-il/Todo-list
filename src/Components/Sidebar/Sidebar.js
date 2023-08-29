@@ -1,11 +1,10 @@
-import React from "react";
 import GroupForm from "./GroupForm";
 import SidebarCSS from "./Sidebar..module.css";
 import IconX from "../../Assets/Icons/IconX";
 import IconSun from "../../Assets/Icons/IconSun";
 import IconList from "../../Assets/Icons/IconList";
 import IconEmptyStar from "../../Assets/Icons/IconEmptyStar";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function Sidebar({ openSidebar, onCloseSidebar }) {
   return (
@@ -17,7 +16,7 @@ export default function Sidebar({ openSidebar, onCloseSidebar }) {
       <IconX onCloseSidebar={onCloseSidebar} />
       <section className={SidebarCSS.list}>
         <ul className={SidebarCSS.ul}>
-          <Link to="/" className={SidebarCSS["sidebar-links"]}>
+          <NavLink to="/" className={SidebarCSS["sidebar-links"]}>
             <li>
               <div>
                 <IconSun />
@@ -25,8 +24,8 @@ export default function Sidebar({ openSidebar, onCloseSidebar }) {
               </div>
               <span>2</span>
             </li>
-          </Link>
-          <Link to="/important" className={SidebarCSS["sidebar-links"]}>
+          </NavLink>
+          <NavLink to="/important" className={SidebarCSS["sidebar-links"]}>
             <li>
               <div>
                 <IconEmptyStar />
@@ -34,8 +33,8 @@ export default function Sidebar({ openSidebar, onCloseSidebar }) {
               </div>
               <span>1</span>
             </li>
-          </Link>
-          <Link to="/completed" className={SidebarCSS["sidebar-links"]}>
+          </NavLink>
+          <NavLink to="/completed" className={SidebarCSS["sidebar-links"]}>
             <li>
               <div>
                 <IconList />
@@ -43,7 +42,7 @@ export default function Sidebar({ openSidebar, onCloseSidebar }) {
               </div>
               <span>1</span>
             </li>
-          </Link>
+          </NavLink>
         </ul>
         <div className={SidebarCSS.line}></div>
         <GroupForm />
