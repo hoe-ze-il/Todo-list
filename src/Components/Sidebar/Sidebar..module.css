@@ -51,6 +51,12 @@
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
+.sidebar-links {
+  text-decoration: none;
+  color: #000;
+  cursor: auto;
+}
+
 .ul li div {
   display: flex;
   align-items: center;
@@ -98,8 +104,4 @@
 
 .group-input::placeholder {
   color: #0084ce;
-}
-
-.overlay {
-  background-color: #2f3030;
 }

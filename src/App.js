@@ -6,6 +6,7 @@ import MyTask from "./Pages/MyTask/MyTask";
 import Important from "./Pages/Important/Important";
 import Complete from "./Pages/Complete/Complete";
 import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 
 export default function App() {
   const [isSidebar, setIsSidebar] = useState(false);
@@ -30,14 +31,20 @@ export default function App() {
       <Header />
       <div className={AppCSS.container}>
         <Sidebar openSidebar={isSidebar} onCloseSidebar={handleSidebar} />
-
-        <MyTask
-          onToggleSidebar={handleSidebar}
-          isSidebar={isSidebar}
-          isLargeScreen={isLargeScreen}
-        />
-        <Important />
-        <Complete />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <MyTask
+                onToggleSidebar={handleSidebar}
+                isSidebar={isSidebar}
+                isLargeScreen={isLargeScreen}
+              />
+            }
+          />
+          <Route path="/important" element={<Important />} />
+          <Route path="/completed" element={<Complete />} />
+        </Routes>
       </div>
     </div>
   );
