@@ -6,6 +6,13 @@ export function DataProvider({ children }) {
   const [isSidebar, setIsSidebar] = useState(false);
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 1024);
 
+  const [tasks, setTasks] = useState([]);
+  console.log(tasks);
+
+  const handleAddTask = (task) => {
+    setTasks((prevTasks) => [...prevTasks, task]);
+  };
+
   // handle resize the screen to 1024
   useEffect(() => {
     const handleResize = () => {
@@ -35,6 +42,10 @@ export function DataProvider({ children }) {
 
         // Handle change icon for large screen
         isLargeScreen,
+
+        //handleAddTasks
+        tasks,
+        handleAddTask,
       }}
     >
       {children}
