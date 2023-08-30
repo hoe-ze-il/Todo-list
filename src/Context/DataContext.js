@@ -7,7 +7,27 @@ export function DataProvider({ children }) {
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 1024);
 
   const [tasks, setTasks] = useState([]);
-  console.log(tasks);
+  const [isMakeSureDelete, setIsMakeSureDelete] = useState(false);
+  const [taskIdToDelete, setTaskIdToDelete] = useState(null);
+  const handleShowDeleteConfirmation = (id) => {
+    setIsMakeSureDelete(true);
+    setTaskIdToDelete(id);
+  };
+
+  const handleHideDeleteConfirmation = () => {
+    setIsMakeSureDelete(false);
+    setTaskIdToDelete(null);
+  };
+
+  const handleDeleteTask = () => {
+    if (taskIdToDelete !== null) {
+      setTasks((prevTasks) =>
+        prevTasks.filter((item) => item.id !== taskIdToDelete)
+      );
+      setIsMakeSureDelete(false);
+      setTaskIdToDelete(null);
+    }
+  };
 
   const handleAddTask = (task) => {
     setTasks((prevTasks) => [...prevTasks, task]);
@@ -43,9 +63,15 @@ export function DataProvider({ children }) {
         // Handle change icon for large screen
         isLargeScreen,
 
-        //handleAddTasks
+        //handleTasks
         tasks,
         handleAddTask,
+
+        // DeleteTask
+        isMakeSureDelete,
+        handleShowDeleteConfirmation,
+        handleHideDeleteConfirmation,
+        handleDeleteTask,
       }}
     >
       {children}

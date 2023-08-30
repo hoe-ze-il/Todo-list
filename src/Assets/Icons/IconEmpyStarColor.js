@@ -1,6 +1,9 @@
+import IconsCSS from "./Icons.module.css";
+
 function IconEmptyStarColor() {
   return (
     <svg
+      className={IconsCSS["empty-star-color"]}
       fill="#0084CE"
       aria-hidden="true"
       version="1.1"

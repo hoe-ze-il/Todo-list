@@ -39,3 +39,15 @@ svg {
 .plus {
   cursor: pointer;
 }
+
+.empty-star-color {
+  cursor: pointer;
+}
+
+.uncomplete {
+  cursor: pointer;
+}
+
+.edit {
+  cursor: pointer;
+}
