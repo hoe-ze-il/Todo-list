@@ -1,13 +1,17 @@
 import MyTaskCSS from "./MyTask.module.css";
 import IconUnComplete from "../../Assets/Icons/IconUnComplete";
+import IconCompleted from "../../Assets/Icons/IconCompleted";
 import IconEmptyStarColor from "../../Assets/Icons/IconEmpyStarColor";
 import IconEdit from "../../Assets/Icons/IconEdit";
 import DataContext from "../../Context/DataContext";
 import { useContext, useState } from "react";
 
 export default function TaskTodo({ item }) {
-  const { handleShowDeleteConfirmation, handleEditTaskName } =
-    useContext(DataContext);
+  const {
+    handleShowDeleteConfirmation,
+    handleEditTaskName,
+    handleToggleCompleteTasks,
+  } = useContext(DataContext);
   const [editedTaskName, setEditedTaskName] = useState("");
   const [isEditMode, setIsEditMode] = useState(false);
   const [editId, setEditId] = useState("");
@@ -50,10 +54,27 @@ export default function TaskTodo({ item }) {
         ) : (
           <>
             <div className={MyTaskCSS["left-flex"]}>
-              <div>
-                <IconUnComplete />
-              </div>
-              <p>{item.taskName}</p>
+              {!item.completed ? (
+                <>
+                  <div
+                    onClick={() => handleToggleCompleteTasks(item.id)}
+                    title="Set task to complete"
+                  >
+                    <IconUnComplete />
+                  </div>
+                  <p>{item.taskName}</p>
+                </>
+              ) : (
+                <>
+                  <div
+                    onClick={() => handleToggleCompleteTasks(item.id)}
+                    title="Set task to uncomplete"
+                  >
+                    <IconCompleted />
+                  </div>
+                  <p className={MyTaskCSS.completed}>{item.taskName}</p>
+                </>
+              )}
             </div>
           </>
         )}
