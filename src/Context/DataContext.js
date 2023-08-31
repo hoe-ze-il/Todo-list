@@ -13,7 +13,19 @@ export function DataProvider({ children }) {
 
   const [query, setQuery] = useState("");
 
+  const numCompleted = tasks.filter((item) => item.completed === true).length;
+  console.log(numCompleted);
+
   const taskLength = tasks.length;
+  console.log(tasks);
+
+  const handleToggleCompleteTasks = (id) => {
+    setTasks((prevTasks) =>
+      prevTasks.map((item) =>
+        item.id === id ? { ...item, completed: !item.completed } : item
+      )
+    );
+  };
 
   const handleEditTaskName = (id, newTaskName) => {
     const updatedTodos = tasks.map((todo) =>
@@ -92,10 +104,18 @@ export function DataProvider({ children }) {
         handleHideDeleteConfirmation,
         handleDeleteTask,
 
+        // EditTask
         handleEditTaskName,
 
+        // Search
         query,
         setQuery,
+
+        // CompleteTask
+        handleToggleCompleteTasks,
+
+        //number of completed task
+        numCompleted,
       }}
     >
       {children}

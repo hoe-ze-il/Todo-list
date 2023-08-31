@@ -1,0 +1,18 @@
+.section-name {
+  width: 150px;
+  display: flex;
+  justify-content: flex-start;
+  align-self: flex-start;
+}
+
+.section-name div h1 {
+  font-weight: 400;
+  margin-left: 10px;
+}
+
+.current-date {
+  margin-top: 0.5rem;
+  font-weight: 100;
+  color: #605e5c;
+  font-size: 1.2rem;
+}

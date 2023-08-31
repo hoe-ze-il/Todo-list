@@ -1,9 +1,10 @@
 import React from "react";
-
+import IconsCSS from "./Icons.module.css";
 export default function IconCompleted() {
   return (
     <svg
-      fill="#000"
+      className={IconsCSS.uncompleted}
+      fill="#0084CE"
       aria-hidden="true"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"

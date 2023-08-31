@@ -6,25 +6,6 @@
   gap: 20px;
 }
 
-.section-name {
-  width: 150px;
-  display: flex;
-  justify-content: flex-start;
-  align-self: flex-start;
-}
-
-.section-name div h1 {
-  font-weight: 400;
-  margin-left: 10px;
-}
-
-.current-date {
-  margin-top: 0.5rem;
-  font-weight: 100;
-  color: #605e5c;
-  font-size: 1.2rem;
-}
-
 .form {
   display: flex;
   justify-content: space-between;
@@ -184,4 +165,9 @@
 
 .save {
   width: 50px;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: rgb(184, 172, 172);
 }

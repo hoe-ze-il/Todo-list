@@ -9,7 +9,9 @@ export default function PackingTaskTodo() {
   return (
     <ul className={MyTaskCSS["packing-task-todo"]}>
       {tasks
-        .filter((item) => item.taskName.toLowerCase().includes(query))
+        .filter((item) =>
+          item.taskName.toLowerCase().includes(query.toLowerCase())
+        )
         .map((item) => (
           <TaskTodo key={item.id} item={item} />
         ))}

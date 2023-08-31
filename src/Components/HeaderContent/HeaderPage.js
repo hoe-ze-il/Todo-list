@@ -1,8 +1,8 @@
-import IconMenu from "../../Assets/Icons/IconMenu";
 import IconSun from "../../Assets/Icons/IconSun";
+import IconMenu from "../../Assets/Icons/IconMenu";
 import { useContext } from "react";
 import DataContext from "../../Context/DataContext";
-import MyTaskCSS from "./MyTask.module.css";
+import HeaderPageCSS from "./HeaderPage.module.css";
 
 function HeaderPage() {
   const options = {
@@ -13,11 +13,11 @@ function HeaderPage() {
   const today = new Date().toLocaleDateString(undefined, options);
   const { isLargeScreen } = useContext(DataContext);
   return (
-    <div className={MyTaskCSS["section-name"]}>
+    <div className={HeaderPageCSS["section-name"]}>
       {isLargeScreen ? <IconSun /> : <IconMenu />}
       <div>
         <h1>MyTask</h1>
-        <p className={MyTaskCSS["current-date"]}>{today}</p>
+        <p className={HeaderPageCSS["current-date"]}>{today}</p>
       </div>
     </div>
   );

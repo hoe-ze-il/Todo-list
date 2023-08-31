@@ -4,12 +4,11 @@ import IconX from "../../Assets/Icons/IconX";
 import IconSun from "../../Assets/Icons/IconSun";
 import IconList from "../../Assets/Icons/IconList";
 import IconEmptyStar from "../../Assets/Icons/IconEmptyStar";
-import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import DataContext from "../../Context/DataContext";
 
 export default function Sidebar() {
-  const { isSidebar, taskLength } = useContext(DataContext);
+  const { isSidebar, taskLength, numCompleted } = useContext(DataContext);
   return (
     <aside
       className={`${SidebarCSS.sidebar} ${
@@ -19,33 +18,29 @@ export default function Sidebar() {
       <IconX />
       <section className={SidebarCSS.list}>
         <ul className={SidebarCSS.ul}>
-          <NavLink to="/" className={SidebarCSS["sidebar-links"]}>
-            <li>
-              <div>
-                <IconSun />
-                <p>MyTask</p>
-              </div>
-              {taskLength ? <span>{taskLength}</span> : null}
-            </li>
-          </NavLink>
-          <NavLink to="/important" className={SidebarCSS["sidebar-links"]}>
-            <li>
-              <div>
-                <IconEmptyStar />
-                <p>Important</p>
-              </div>
-              <span>0</span>
-            </li>
-          </NavLink>
-          <NavLink to="/completed" className={SidebarCSS["sidebar-links"]}>
-            <li>
-              <div>
-                <IconList />
-                <p>Completed</p>
-              </div>
-              <span>0</span>
-            </li>
-          </NavLink>
+          <li>
+            <div>
+              <IconSun />
+              <p>MyTask</p>
+            </div>
+            {taskLength ? <span>{taskLength}</span> : null}
+          </li>
+
+          <li>
+            <div>
+              <IconEmptyStar />
+              <p>Important</p>
+            </div>
+            <span>0</span>
+          </li>
+
+          <li>
+            <div>
+              <IconList />
+              <p>Completed</p>
+            </div>
+            {numCompleted ? <span>{numCompleted}</span> : null}
+          </li>
         </ul>
         <div className={SidebarCSS.line}></div>
         <GroupForm />
