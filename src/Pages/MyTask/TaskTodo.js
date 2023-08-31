@@ -56,14 +56,20 @@ export default function TaskTodo({ item }) {
             <div className={MyTaskCSS["left-flex"]}>
               {!item.completed ? (
                 <>
-                  <div onClick={() => handleToggleCompleteTasks(item.id)}>
+                  <div
+                    onClick={() => handleToggleCompleteTasks(item.id)}
+                    title="Set task to complete"
+                  >
                     <IconUnComplete />
                   </div>
                   <p>{item.taskName}</p>
                 </>
               ) : (
                 <>
-                  <div onClick={() => handleToggleCompleteTasks(item.id)}>
+                  <div
+                    onClick={() => handleToggleCompleteTasks(item.id)}
+                    title="Set task to uncomplete"
+                  >
                     <IconCompleted />
                   </div>
                   <p className={MyTaskCSS.completed}>{item.taskName}</p>

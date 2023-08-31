@@ -8,7 +8,8 @@ import { useContext } from "react";
 import DataContext from "../../Context/DataContext";
 
 export default function Sidebar() {
-  const { isSidebar, taskLength, numCompleted } = useContext(DataContext);
+  const { isSidebar, taskLength, numCompleted, setSortBy } =
+    useContext(DataContext);
   return (
     <aside
       className={`${SidebarCSS.sidebar} ${
@@ -34,7 +35,10 @@ export default function Sidebar() {
             <span>0</span>
           </li>
 
-          <li>
+          <li
+            onClick={() => setSortBy("completed")}
+            title="Sorted By Completed"
+          >
             <div>
               <IconList />
               <p>Completed</p>

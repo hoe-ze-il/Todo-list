@@ -1,6 +1,4 @@
 import AppContentCSS from "./AppContent.module.css";
-
-import { Routes, Route } from "react-router-dom";
 import { useContext } from "react";
 
 import DataContext from "../../Context/DataContext";

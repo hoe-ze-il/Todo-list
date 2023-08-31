@@ -13,6 +13,8 @@ export function DataProvider({ children }) {
 
   const [query, setQuery] = useState("");
 
+  const [sortBy, setSortBy] = useState("");
+
   const numCompleted = tasks.filter((item) => item.completed === true).length;
   console.log(numCompleted);
 
@@ -116,6 +118,10 @@ export function DataProvider({ children }) {
 
         //number of completed task
         numCompleted,
+
+        // sortby
+        sortBy,
+        setSortBy,
       }}
     >
       {children}
