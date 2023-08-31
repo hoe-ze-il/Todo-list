@@ -1,5 +1,5 @@
 import GroupForm from "./GroupForm";
-import SidebarCSS from "./Sidebar..module.css";
+import SidebarCSS from "./Sidebar.module.css";
 import IconX from "../../Assets/Icons/IconX";
 import IconSun from "../../Assets/Icons/IconSun";
 import IconList from "../../Assets/Icons/IconList";
@@ -9,7 +9,7 @@ import { useContext } from "react";
 import DataContext from "../../Context/DataContext";
 
 export default function Sidebar() {
-  const { isSidebar } = useContext(DataContext);
+  const { isSidebar, taskLength } = useContext(DataContext);
   return (
     <aside
       className={`${SidebarCSS.sidebar} ${
@@ -25,7 +25,7 @@ export default function Sidebar() {
                 <IconSun />
                 <p>MyTask</p>
               </div>
-              <span>2</span>
+              {taskLength ? <span>{taskLength}</span> : null}
             </li>
           </NavLink>
           <NavLink to="/important" className={SidebarCSS["sidebar-links"]}>
@@ -34,7 +34,7 @@ export default function Sidebar() {
                 <IconEmptyStar />
                 <p>Important</p>
               </div>
-              <span>1</span>
+              <span>0</span>
             </li>
           </NavLink>
           <NavLink to="/completed" className={SidebarCSS["sidebar-links"]}>
@@ -43,7 +43,7 @@ export default function Sidebar() {
                 <IconList />
                 <p>Completed</p>
               </div>
-              <span>1</span>
+              <span>0</span>
             </li>
           </NavLink>
         </ul>

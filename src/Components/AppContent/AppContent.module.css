@@ -31,10 +31,6 @@ main {
   }
 }
 
-button {
-  padding: 10px 5px;
-}
-
 .overlay {
   position: absolute;
   top: 0;
@@ -44,4 +40,13 @@ button {
   background-color: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(3px);
   z-index: 21;
+}
+
+button {
+  padding: 8px 5px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: #0084ce;
+  cursor: pointer;
 }

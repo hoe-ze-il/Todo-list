@@ -1,9 +1,12 @@
-import SidebarCSS from "./Sidebar..module.css";
+import SidebarCSS from "./Sidebar.module.css";
 import IconAddGroup from "../../Assets/Icons/IconAddGroup";
 
 function GroupForm() {
+  const handleSubmitForm = (e) => {
+    e.preventDefault();
+  };
   return (
-    <form className={SidebarCSS.group}>
+    <form className={SidebarCSS.group} onSubmit={handleSubmitForm}>
       <div className={SidebarCSS["add-group"]}>
         <IconAddGroup />
         <input
