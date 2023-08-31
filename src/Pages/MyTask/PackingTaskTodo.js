@@ -12,12 +12,13 @@ export default function PackingTaskTodo() {
     sortedTasks = tasks
       .slice()
       .sort((a, b) => (a.completed === b.completed ? 0 : a.completed ? -1 : 1));
-  } else {
-    // Handle other sorting criteria here, if needed.
-    // If no sorting criteria is specified, you can assign tasks directly.
-    sortedTasks = tasks.slice();
   }
 
+  if (sortBy === "important") {
+    sortedTasks = tasks
+      .slice()
+      .sort((a, b) => (a.important === b.important ? 0 : a.important ? -1 : 1));
+  }
   return (
     <ul className={MyTaskCSS["packing-task-todo"]}>
       {sortedTasks
