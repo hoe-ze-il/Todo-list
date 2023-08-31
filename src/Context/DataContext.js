@@ -7,8 +7,24 @@ export function DataProvider({ children }) {
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 1024);
 
   const [tasks, setTasks] = useState([]);
+
   const [isMakeSureDelete, setIsMakeSureDelete] = useState(false);
   const [taskIdToDelete, setTaskIdToDelete] = useState(null);
+
+  const taskLength = tasks.length;
+
+  const handleEditTaskName = (id, newTaskName) => {
+    const updatedTodos = tasks.map((todo) =>
+      todo.id === id
+        ? {
+            ...todo,
+            taskName: newTaskName,
+          }
+        : todo
+    );
+    setTasks(updatedTodos);
+  };
+
   const handleShowDeleteConfirmation = (id) => {
     setIsMakeSureDelete(true);
     setTaskIdToDelete(id);
@@ -55,6 +71,7 @@ export function DataProvider({ children }) {
   return (
     <DataContext.Provider
       value={{
+        taskLength,
         //Handle Sidebar
         isSidebar,
         setIsSidebar,
@@ -72,6 +89,8 @@ export function DataProvider({ children }) {
         handleShowDeleteConfirmation,
         handleHideDeleteConfirmation,
         handleDeleteTask,
+
+        handleEditTaskName,
       }}
     >
       {children}
