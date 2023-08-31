@@ -5,16 +5,14 @@ import TaskTodo from "./TaskTodo";
 import MyTaskCSS from "./MyTask.module.css";
 
 export default function PackingTaskTodo() {
-  const { tasks, handleEditTaskName } = useContext(DataContext);
+  const { tasks, query } = useContext(DataContext);
   return (
     <ul className={MyTaskCSS["packing-task-todo"]}>
-      {tasks.map((item) => (
-        <TaskTodo
-          key={item.id}
-          item={item}
-          onEditTaskName={handleEditTaskName}
-        />
-      ))}
+      {tasks
+        .filter((item) => item.taskName.toLowerCase().includes(query))
+        .map((item) => (
+          <TaskTodo key={item.id} item={item} />
+        ))}
     </ul>
   );
 }

@@ -10,6 +10,7 @@ import MyTask from "../../Pages/MyTask/MyTask";
 import Important from "../../Pages/Important/Important";
 import Complete from "../../Pages/Complete/Complete";
 import MakeSureDelete from "../MakeSureDelete/MakeSureDelete";
+import Search from "../../Pages/Search/Search";
 
 export default function AppContent() {
   const { isMakeSureDelete } = useContext(DataContext);
@@ -24,6 +25,7 @@ export default function AppContent() {
           <Route path="/" element={<MyTask />} />
           <Route path="/important" element={<Important />} />
           <Route path="/completed" element={<Complete />} />
+          <Route path="/search/:query" element={<Search />} />
         </Routes>
       </div>
       {isMakeSureDelete && <div className={AppContentCSS.overlay}></div>}

@@ -5,7 +5,7 @@ import IconEdit from "../../Assets/Icons/IconEdit";
 import DataContext from "../../Context/DataContext";
 import { useContext, useState } from "react";
 
-export default function TaskTodo({ item, onEditTaskName }) {
+export default function TaskTodo({ item }) {
   const { handleShowDeleteConfirmation, handleEditTaskName } =
     useContext(DataContext);
   const [editedTaskName, setEditedTaskName] = useState("");

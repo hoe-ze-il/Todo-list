@@ -11,6 +11,8 @@ export function DataProvider({ children }) {
   const [isMakeSureDelete, setIsMakeSureDelete] = useState(false);
   const [taskIdToDelete, setTaskIdToDelete] = useState(null);
 
+  const [query, setQuery] = useState("");
+
   const taskLength = tasks.length;
 
   const handleEditTaskName = (id, newTaskName) => {
@@ -91,6 +93,9 @@ export function DataProvider({ children }) {
         handleDeleteTask,
 
         handleEditTaskName,
+
+        query,
+        setQuery,
       }}
     >
       {children}
