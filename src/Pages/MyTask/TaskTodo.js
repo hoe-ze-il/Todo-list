@@ -5,12 +5,14 @@ import IconEmptyStarColor from "../../Assets/Icons/IconEmpyStarColor";
 import IconEdit from "../../Assets/Icons/IconEdit";
 import DataContext from "../../Context/DataContext";
 import { useContext, useState } from "react";
+import IconFullStar from "../../Assets/Icons/IconFullStar";
 
 export default function TaskTodo({ item }) {
   const {
     handleShowDeleteConfirmation,
     handleEditTaskName,
     handleToggleCompleteTasks,
+    handleToggleImportantTasks,
   } = useContext(DataContext);
   const [editedTaskName, setEditedTaskName] = useState("");
   const [isEditMode, setIsEditMode] = useState(false);
@@ -96,7 +98,15 @@ export default function TaskTodo({ item }) {
             >
               <IconEdit />
             </div>
-            <IconEmptyStarColor />
+            {!item.important ? (
+              <div onClick={() => handleToggleImportantTasks(item.id)}>
+                <IconEmptyStarColor />
+              </div>
+            ) : (
+              <div onClick={() => handleToggleImportantTasks(item.id)}>
+                <IconFullStar />
+              </div>
+            )}
           </div>
         )}
       </li>

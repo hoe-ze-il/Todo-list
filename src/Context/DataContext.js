@@ -16,10 +16,19 @@ export function DataProvider({ children }) {
   const [sortBy, setSortBy] = useState("");
 
   const numCompleted = tasks.filter((item) => item.completed === true).length;
-  console.log(numCompleted);
+  console.log(tasks);
+
+  const numImportant = tasks.filter((item) => item.important === true).length;
 
   const taskLength = tasks.length;
-  console.log(tasks);
+
+  const handleToggleImportantTasks = (id) => {
+    setTasks((prevTasks) =>
+      prevTasks.map((item) =>
+        item.id === id ? { ...item, important: !item.important } : item
+      )
+    );
+  };
 
   const handleToggleCompleteTasks = (id) => {
     setTasks((prevTasks) =>
@@ -116,8 +125,14 @@ export function DataProvider({ children }) {
         // CompleteTask
         handleToggleCompleteTasks,
 
+        // ImportantTask
+        handleToggleImportantTasks,
+
         //number of completed task
         numCompleted,
+
+        //number of important task
+        numImportant,
 
         // sortby
         sortBy,

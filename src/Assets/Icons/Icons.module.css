@@ -55,3 +55,7 @@ svg {
 .uncompleted {
   cursor: pointer;
 }
+
+.full-star {
+  cursor: pointer;
+}
