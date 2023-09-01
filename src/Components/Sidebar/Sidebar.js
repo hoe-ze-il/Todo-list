@@ -1,4 +1,3 @@
-import GroupForm from "./GroupForm";
 import SidebarCSS from "./Sidebar.module.css";
 import IconX from "../../Assets/Icons/IconX";
 import IconSun from "../../Assets/Icons/IconSun";
@@ -8,8 +7,14 @@ import { useContext } from "react";
 import DataContext from "../../Context/DataContext";
 
 export default function Sidebar() {
-  const { isSidebar, taskLength, numCompleted, numImportant, setSortBy } =
-    useContext(DataContext);
+  const {
+    isSidebar,
+    taskLength,
+    numCompleted,
+    numImportant,
+    setSortBy,
+    setIsSidebar,
+  } = useContext(DataContext);
   return (
     <aside
       className={`${SidebarCSS.sidebar} ${
@@ -19,7 +24,12 @@ export default function Sidebar() {
       <IconX />
       <section className={SidebarCSS.list}>
         <ul className={SidebarCSS.ul}>
-          <li>
+          <li
+            onClick={() => {
+              setSortBy("myTask");
+              setIsSidebar(false);
+            }}
+          >
             <div>
               <IconSun />
               <p>MyTask</p>
@@ -27,7 +37,13 @@ export default function Sidebar() {
             {taskLength ? <span>{taskLength}</span> : null}
           </li>
 
-          <li onClick={() => setSortBy("important")}>
+          <li
+            onClick={() => {
+              setSortBy("important");
+              setIsSidebar(false);
+            }}
+            title="Sorted By Important"
+          >
             <div>
               <IconEmptyStar />
               <p>Important</p>
@@ -36,7 +52,10 @@ export default function Sidebar() {
           </li>
 
           <li
-            onClick={() => setSortBy("completed")}
+            onClick={() => {
+              setSortBy("completed");
+              setIsSidebar(false);
+            }}
             title="Sorted By Completed"
           >
             <div>
@@ -47,7 +66,6 @@ export default function Sidebar() {
           </li>
         </ul>
         <div className={SidebarCSS.line}></div>
-        <GroupForm />
       </section>
     </aside>
   );
