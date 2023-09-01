@@ -47,6 +47,6 @@ There are Three main components which provided into this project:
 
 ## Other Relevant:
 
-Convention Guide Link: [Convention Guide](https://pond-swoop-a2d.notion.site/ToDo-List-487f8d9f61e74a739a888dbbea595149?pvs=4)
+Convention Guide Link: [Convention Guide](https://pond-swoop-a2d.notion.site/To-Do-List-Project-Convention-Guid-8f8c5e4fb4404f86ab9e054c0dc9a1ab?pvs=4)
 
 Figma: [UI Design](https://www.figma.com/file/6C3vDph3vjAf5fiUIAiLlt/Todo-List?type=design&node-id=89%3A2&mode=design&t=83VPynYDzG5z4st9-1)
