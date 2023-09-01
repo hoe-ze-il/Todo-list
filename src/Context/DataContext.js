@@ -16,7 +16,6 @@ export function DataProvider({ children }) {
   const [sortBy, setSortBy] = useState("");
 
   const numCompleted = tasks.filter((item) => item.completed === true).length;
-  console.log(tasks);
 
   const numImportant = tasks.filter((item) => item.important === true).length;
 
