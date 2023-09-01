@@ -8,7 +8,7 @@ export default function Header() {
       <nav className={HeaderCSS.nav}>
         <h1 className={HeaderCSS.h1}>ToDo</h1>
         <Searchbar />
-        <img className={HeaderCSS.image} src="img/user.png" alt="User" />
+        <img className={HeaderCSS.image} src="./img/user.png" alt="User" />
       </nav>
     </header>
   );
