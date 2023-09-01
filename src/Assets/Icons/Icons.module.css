@@ -1,0 +1,57 @@
+svg {
+  width: 20px;
+  height: 20px;
+}
+
+.search {
+  position: absolute;
+  right: 20px;
+  top: 20%;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1024px) {
+  .search {
+    right: 40px;
+  }
+}
+
+.close {
+  cursor: pointer;
+  margin-left: 10px;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .close {
+    display: none;
+  }
+}
+
+.menu {
+  cursor: pointer;
+}
+
+.plus {
+  cursor: pointer;
+}
+
+.empty-star-color {
+  cursor: pointer;
+}
+
+.uncomplete {
+  cursor: pointer;
+}
+
+.edit {
+  cursor: pointer;
+}
+
+.uncompleted {
+  cursor: pointer;
+}
+
+.full-star {
+  cursor: pointer;
+}
