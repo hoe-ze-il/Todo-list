@@ -17,6 +17,9 @@ export default function TaskTodo({ item }) {
   const [editedTaskName, setEditedTaskName] = useState("");
   const [isEditMode, setIsEditMode] = useState(false);
   const [editId, setEditId] = useState("");
+  const currentDate = new Date();
+  const formattedDate = currentDate.toLocaleDateString();
+  const formattedTime = currentDate.toLocaleTimeString();
 
   const handleSave = (e) => {
     e.preventDefault();
@@ -38,7 +41,12 @@ export default function TaskTodo({ item }) {
 
   return (
     <>
-      <li key={item.id} className={MyTaskCSS["task-todo"]}>
+      <li
+        key={item.id}
+        className={`${MyTaskCSS["task-todo"]} ${
+          item.completed ? MyTaskCSS["task-completed"] : null
+        }`}
+      >
         {isEditMode ? (
           <form
             className={MyTaskCSS["form-edit-task-name"]}
@@ -64,7 +72,12 @@ export default function TaskTodo({ item }) {
                   >
                     <IconUnComplete />
                   </div>
-                  <p>{item.taskName}</p>
+                  <div className={MyTaskCSS["name-and-time"]}>
+                    <p>{item.taskName}</p>
+                    <p className={MyTaskCSS["current-time"]}>
+                      {formattedDate} {formattedTime}
+                    </p>
+                  </div>
                 </>
               ) : (
                 <>
@@ -74,7 +87,12 @@ export default function TaskTodo({ item }) {
                   >
                     <IconCompleted />
                   </div>
-                  <p className={MyTaskCSS.completed}>{item.taskName}</p>
+                  <div classname={MyTaskCSS["name-and-time"]}>
+                    <p className={MyTaskCSS.completed}>{item.taskName}</p>
+                    <p className={MyTaskCSS["current-time"]}>
+                      {formattedDate} {formattedTime}
+                    </p>
+                  </div>
                 </>
               )}
             </div>
