@@ -81,28 +81,3 @@
   width: 80%;
   border-bottom: 2px solid #b0b0b080;
 }
-
-.group {
-  padding-left: 16px;
-  width: 100%;
-}
-
-.add-group {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.group-input {
-  border: none;
-  height: 3rem;
-  background-color: #eaeaea;
-}
-
-.group-input:focus {
-  outline: none;
-}
-
-.group-input::placeholder {
-  color: #0084ce;
-}

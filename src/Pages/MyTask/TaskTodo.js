@@ -99,9 +99,9 @@ export default function TaskTodo({ item }) {
           </>
         )}
         {isEditMode ? (
-          <div className={MyTaskCSS["btn-cancle-save"]}>
-            <button className={MyTaskCSS.cancle} onClick={handleEditClick}>
-              Cancle
+          <div className={MyTaskCSS["btn-cancel-save"]}>
+            <button className={MyTaskCSS.cancel} onClick={handleEditClick}>
+              Cancel
             </button>
             <button className={MyTaskCSS.save} onClick={handleSave}>
               Save
@@ -113,15 +113,22 @@ export default function TaskTodo({ item }) {
               onClick={() => {
                 handleEditClick(item.taskName, item.id);
               }}
+              title="Modify task"
             >
               <IconEdit />
             </div>
             {!item.important ? (
-              <div onClick={() => handleToggleImportantTasks(item.id)}>
+              <div
+                onClick={() => handleToggleImportantTasks(item.id)}
+                title="Set task to important"
+              >
                 <IconEmptyStarColor />
               </div>
             ) : (
-              <div onClick={() => handleToggleImportantTasks(item.id)}>
+              <div
+                onClick={() => handleToggleImportantTasks(item.id)}
+                title="Set task to unimportant"
+              >
                 <IconFullStar />
               </div>
             )}

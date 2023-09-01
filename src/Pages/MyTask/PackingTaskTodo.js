@@ -16,6 +16,8 @@ export default function PackingTaskTodo() {
     sortedTasks = tasks
       .slice()
       .sort((a, b) => (a.important === b.important ? 0 : a.important ? -1 : 1));
+  } else if (sortBy === "myTask") {
+    sortedTasks = tasks.slice();
   } else {
     sortedTasks = tasks;
   }
