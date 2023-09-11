@@ -1,49 +1,34 @@
 # ToDo-List
 
 This is a small website for managing a to-do list. It was created using React JS to showcase the knowledge of an individual project. This project aims to help people manage their daily tasks and steps by providing their tasks into this website.
+## DEMO: 
 
-![Untitled](https://github.com/anb-hq/CnD_HoeZeIl_ToDoList/assets/137028502/291a6f1b-8b7b-491a-abc5-3599235ae7c9)
-)
-
-## Components:’
+![Untitled](https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F957fcd95-fd8c-4e2d-9c19-0bdf9f44e214%2F4c41ba90-fb16-4419-a5a9-026ef2c43c73%2FUntitled.png?table=block&id=95733188-6ec6-4f7a-9d2d-3474428efe28&spaceId=957fcd95-fd8c-4e2d-9c19-0bdf9f44e214&width=2000&userId=39374ed8-ffcb-460d-acb9-ba486b0703ce&cache=v2)
 
 There are Three main components which provided into this project:
 
-**Header Component:** This component includes a search bar that allows users to navigate their tasks. The results of the tasks will appear based on the search input in the main component.
+**Task Management:**  To-do lists help you keep track of all the tasks and activities you need to complete. This prevents important tasks from being forgotten or overlooked.
 
-**Sidebar Component:** This component allows the user to sort tasks based on importance, completion status, or input order.
+**Important Task:** You can assign priorities to tasks, ensuring that you focus on the most important and time-sensitive ones first. This helps you make better decisions about how to allocate your time and effort.
 
-**Main Component: U**sers will enable to manage their tasks by adding, modifying, deleting, or marking them as completed or important in this component.
+**Productivity Boost:** With a to-do list, you can stay focused on your most important tasks, avoid procrastination, and make efficient use of your time, ultimately leading to increased productivity.
 
-## Git Flow Method:
+**Flexibility:** You can modify, delete, complete, add and set important as you want.
 
-1. Main Branch:
-   - This branch represents the production-ready code.
-   - The main branch is the primary branch of the project.
-2. Develop Branch:
-   - It used for ongoing development work.
-   - It servers as a staging area where features, release and hotfix merge in together after completed.
-   - Once the code on develop branch are stabled, it can be merged into main branch to create a new release.
-3. Feature Branch:
-   - Feature branch are created for the development of new features or enhancements.
-   - Each feature branch focuses on a specific feature or task:
-     - `feature/PageLayout`
-     - `feature/MyTask`
-     - `feature/CompleteTask`
-     - `feature/ImportantTask`
-     - `feature/CurrentDate`
-   - Once feature is completed, it can be merged into develop branch.
-4. Release Branch:
-   - A release branch is created when ready to merge into main branch.
-     - `release/1.0`
-   - Once the release is ready, the release branch can merge into main branch.
-5. Bugfix Branch:
-   - Bugfix simply branch from release branch, to fix any bug base on QA testing.
-     - `bugfix/FixBug`
-   - Once the bug fixed, it will be merge back into release branch.
-6. HotFix Branch:
-   - This branch is similar to bugFix branch, but it creates from main branch and to fix to critical bug
-     - `hotfix/1.1`
+## Technology:
+
+- React JS
+- CSS
+- JavaScript
+- Context API
+- JSX
+
+## Tools:
+
+- Visual Studio Code
+- Git/GitHub
+- Figma
+- Netlify
 
 ## Other Relevant:
 
